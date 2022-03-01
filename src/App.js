@@ -1,23 +1,25 @@
 import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Products from './Products/Products'
+import Panier from './Panier/Panier'
+
 
 function App() {
+
+  const [panier, setPanier] = useState([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className='d-flex justify-content-center align-items-center mt-3'>
+        <img style={{maxWidth: "50px"}} src={logo} alt="" />
+        <h1 className='text-center'>Magasin en React</h1>
+        <img style={{maxWidth: "50px"}} src={logo} alt="" />
       </header>
+      <main className='p-5'>
+        <Panier name="panier" panier={panier} setPanier={setPanier} />
+        <Products name="products" panier={panier} setPanier={setPanier} />
+      </main>
     </div>
   );
 }

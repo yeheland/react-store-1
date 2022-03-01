@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Lait",
+        "price": 0.6
+    },
+    {
+        "name": "Pomme",
+        "price": 1.5
+    },
+    {
+        "name": "Banane",
+        "price": 1.7
+    },
+    {
+        "name": "Clavier",
+        "price": 2.5
+    },
+    {
+        "name": "Souris",
+        "price": 3.5
+    },
+    {
+        "name": "Orange",
+        "price": 1.2
+    },
+    {
+        "name": "Pâtes",
+        "price": 2.3
+    },
+    {
+        "name": "Chocolat",
+        "price": 5.7
+    },
+    {
+        "name": "Chargeur",
+        "price": 4.1
+    }
+]

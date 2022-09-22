@@ -1,15 +1,16 @@
 import React from "react";
 
 function Panier(props) {
-    const totalPanier = props.panier.reduce((acc, curr) => acc + curr.price, 0)
+    console.log("panier props", props)
+    const totalPanier = props.panier.reduce((acc, curr) => acc + Number(curr.price), 0)
     return (
         <div>
             <div><p>Votre panier est vide</p></div>
             <div>
                 <ul>
                     {
-                        props.panier.map((item) =>
-                            <li>{item.name} {item.price}€</li>
+                        props.panier.map((item, index) =>
+                            <li key={index}>{item.quantity} {item.name} {item.price}€</li>
                         )
                     }
                 </ul>

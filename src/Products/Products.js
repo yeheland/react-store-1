@@ -17,7 +17,28 @@ function Products(props) {
                         name={product.name}
                         price={product.price}
                         click={() => {
-                            props.setPanier([...props.panier, product])
+                            const productIndex = props.panier.findIndex((prod)=>prod.name === product.name)
+                            // console.log("is product exists", isProductExist)
+                            if(productIndex === -1){
+                                props.setPanier([...props.panier, {...product, quantity: 1}])
+
+                            }else{
+                                props.setPanier((prevPanier) => {
+                                
+
+                                  const productWithq = prevPanier.map((item, index) => {
+                                    if(productIndex === index) {
+                                      return {
+                                        ...item,
+                                        quantity: item.quantity + 1
+                                      }
+                                    }
+                                    return item
+                                  })
+                                 
+                                  return productWithq
+                                }) 
+                              }
                             
                         }}
                         />
